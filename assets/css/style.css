@@ -1,0 +1,512 @@
+:root{
+    --primary-color: rgba(191,151,136,1);
+    --secondary-color: rgba(140,140,140,1);
+    --bg-color: rgba(140,140,140,0.32);
+    --black: rgba(13,13,13,1);
+    --white: rgba(255,255,255,1);
+    --contrast-color: rgba(140,93,101,1);
+
+    --fw-base: "bc-novatica-cyr", sans-serif;
+    --fw-light: 300;
+    --fw-regular:400;
+    --fw-medium:500;
+    --fw-semi:600;
+    --fw-bold:700;
+
+    --fs-body: clamp(0.5vw,1vw);
+    --fs-title:clamp(20px, 5vw, 7rem);
+    --fs-400: clamp(.8em, 1vw, 2rem);
+    --fs-small: 16px;
+    --fs-medium:18px;
+    --fs-600: 25px;
+    --fs-experience-title:28px;
+    --fs-project-title:clamp(1.5em, 1.3vw, 3rem);
+     
+    --col-2: 1fr 1fr;
+    --col-3: 1fr 1fr 1fr;
+}
+/* Styling the scrollbar */
+.custom_scrollbar::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    background-color: var(--bg-color); /* Background color of the scrollbar track */
+    border-radius: 30px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Color of the scrollbar thumb */
+    border-radius: 30px; /* Rounded corners for the scrollbar thumb */
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(191, 151, 136, 0.7); /* Lighten the color on hover */
+    border-radius: 30px; /* Rounded corners for the scrollbar thumb on hover */
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+    background-color: var(--bg-color); /* Background color of the scrollbar track */
+    border-radius: 30px; /* Rounded corners for the scrollbar track */
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+body{
+    font-size: var(--fs-body);
+    background-image: url(../images/background/background-item-long-45.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--bg-color);
+    background-blend-mode: screen;
+    font-family: var(--fw-base);
+    font-weight: var(--fw-regular);
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+ /*reset*/
+
+ /*NAVBAR*/
+header{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    padding: 0px 50px;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    border-bottom: solid var(--secondary-color) 1px;
+}
+section{
+    scroll-snap-align: start;
+    max-width: min(85%, 1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: min(5rem, 4%);
+    padding-top: min(20%,20vw, 100px);
+    flex-direction: column;
+}
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary-color);
+    margin: 20px 0;
+}
+.mobile-nav-toggle{
+    display: none;
+}
+
+.contact-btn{
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-regular);
+    border-radius: 20px;
+    box-shadow: 0 2px rgba(140, 93, 101,1);
+    border: none;
+    padding: 15px clamp(2vw, 40px, 4vw);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+#logo{
+    font-size: 28px;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 60%;
+    overflow: hidden;
+}
+.navbar li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+    border-bottom: 4px solid transparent;
+}
+.navbar .menu-items li:hover{
+    border-bottom: 4px solid var(--primary-color);
+}
+.navbar li.active{
+    border-bottom: 4px solid var(--primary-color);
+}
+.menu li a{
+    color: var(--black);
+    text-decoration: none;
+}
+.menu-items{
+    flex-grow: 4;
+}
+.menu-icons i{
+    color: var(--black);
+}
+
+/*END NAVBAR*/
+
+#home h1{
+    font-size: clamp(2rem, 150px, 8vw);
+    font-weight: var(--fw-medium);
+    padding-bottom: 30px;
+    line-height: 0.95em;
+}
+#home p{
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--secondary-color);
+}
+#home span{
+    color: var(--primary-color);
+}
+
+
+
+/*SCROLL*/
+.scroll-container{
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    left: clamp(5rem,12%,20vw);
+    border-right: 1px solid var(--secondary-color);
+}
+.scroll-container img{
+    width: 100%;
+    margin: auto;
+    max-width: 40px;
+}
+.scroll a{
+    text-decoration: none; 
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--secondary-color);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+/*END SCROLL*/
+
+
+/*SCREEN*/
+@media (max-width:1600px){
+    .scroll{
+        display: none;
+    }
+    .scroll-container{
+        padding: 5px 0;
+        left: min(1px, 1%, 1.8rem);
+    }
+    .scroll-container img{
+        max-width: 30px;
+    } 
+}
+@media (max-width:1024px){
+    .container{
+        padding-left: 20px ;
+    }
+    .navbar{
+        position: fixed;
+        inset: 0 0 0 25%;
+        display: flex;
+        z-index: 1000;
+        flex-direction: column;
+        padding: min(20vh, 10rem) 2em;
+        background-color: var(--bg-color);
+        backdrop-filter: blur(1rem);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        align-items: flex-start;
+    }
+    .navbar[data-visible="true"] {
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        background-image: url("../images/icons/hamburguer.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 0;
+        right: 1rem;
+        z-index: 9999999;
+    }
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background-image: url("../images/icons/x.png") ;
+    }
+    .menu-items{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar li{
+        align-items: flex-start;
+    }
+}
+@media (min-width:1024px){
+    #experiences .even_grid{
+        grid-template-columns: var(--col-2);
+        column-gap: 2em;
+    }
+    .exp_cia{
+        text-align: right;
+    }
+    .exp {
+        min-width: 200px; /* Adjust for smaller screens */
+    }
+
+}
+/*END SCREEN*/
+
+/*EXPERIENCE*/
+.page_title{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-title);
+    margin-bottom: 40px;
+}
+.current{
+    color: var(--primary-color);
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-medium);
+}
+.even_grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+.exp {
+    flex: 0 0 100%; /* Each experience card takes up full width */
+    scroll-snap-align: start; /* Snap each card to the start of the container */
+}
+#experiences .even_grid{
+    gap: 2em;
+}
+
+.card {
+    background-color: var(--bg-color);
+    margin-bottom: 15px;
+    width: 100%; /* Each card takes up full width of the container */
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+.even_grid span{
+    color: var(--contrast-color);
+    font-weight: var(--fw-semi);
+    font-size: var(--fs-small);
+}
+.exp_cia{
+    color: var(--secondary-color);
+    font-weight: var(--fw-semi);
+    font-size: var(--fs-small);
+}
+.experience_card h3{
+    margin: 15px 0;
+}
+/*END EXPERIENCE*/
+
+/*PROJECTS*/
+
+.card_projects {
+    position: relative;
+    background-color: var(--bg-color);
+    padding: 30px 20px; /* Adjust padding */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    flex: 0 0 calc(36.33% - 40px); /* Display three projects per row with spacing */
+    box-sizing: border-box;
+    display: flex; /* Use flexbox to align content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    aspect-ratio: 1;
+    overflow: hidden; /* Hide overflow to prevent content from overflowing */
+    min-height: 250px;
+}
+
+.card_header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+    width: 90%;
+    z-index: 1; /* Ensure header is above card content */
+}
+
+.card_projects:hover .card_header {
+    visibility: hidden; /* Hide header on hover */
+}
+
+.card_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    padding: 25px;
+    background-color: var(--bg-color); /* Semi-transparent white background */
+    border-radius: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.1s ease; /* Transition for opacity */
+    display: flex; /* Use flexbox to align content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    width: 85%; /* Set a maximum width for the card content */
+    aspect-ratio: 1;
+    z-index: 0; /* Ensure content is behind header */
+}
+
+.card_projects:hover .card_content {
+    opacity: 1; /* Show content on hover */
+}
+
+.card_projects:hover {
+    transform: translateY(-10px); /* Example: Move card up slightly on hover */
+}
+.project_icons i{
+    font-size: 2.5rem!important;
+    margin: 10px 5px 5px 5px;
+    color: var(--secondary-color)!important;
+
+}
+/* Flex container for project cards */
+.project-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to ensure horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Adjust spacing between cards */
+    padding: 0 20px; /* Adjust container padding */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+/* Styling for project card icons */
+.card_projects i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: var(--contrast-color);
+}
+
+/* Project card titles */
+.card_projects h3 {
+    font-size: var(--fs-project-title);
+    font-weight: var(--fw-semi);
+    margin-bottom: 5px;
+}
+
+/* Project card descriptions */
+.card_projects p {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semi);
+    color: var(--contrast-color);
+}
+
+@media (max-width:1024px) {
+    .card_projects {
+        flex: 0 0 100%; /* Each card takes up full width */
+    }
+    .project-container , .experience_container{
+        max-width: 85vw;
+    }
+}
+/*END PROJECTS*/
+
+/*INDIVIDUAL PROJECT*/
+
+/* Styling for project-section */
+.section-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for content-column */
+.content-column {
+    flex: 1; /* Take up all available space */
+    padding-right: 30px; /* Add padding to the right */
+}
+
+/* Styling for image-column */
+.image-column {
+    flex: 0 0 40%; /* Set a fixed width for image column */
+}
+
+/* Styling for project-name */
+.project-name {
+    font-size: var(--fs-project-title);
+    font-weight: var(--fw-semi);
+    margin-bottom: 10px;
+}
+
+/* Styling for icons */
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+/* Styling for company-name */
+.company-name {
+    font-size: var(--fs-small);
+    color: var(--contrast-color);
+    margin-bottom: 10px;
+}
+
+/* Styling for description */
+.description {
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Styling for image */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-section {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    .section-content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+    .image-column,
+    .content-column {
+        flex: 100%; /* Full width for columns on smaller screens */
+        padding-left: 0; /* Remove left padding */
+        margin-bottom: 20px; /* Add bottom margin */
+    }
+    .icons {
+        justify-content: flex-start; /* Align icons to the left on smaller screens */
+    }
+}
+
+/*END INDIVIDUAL PROJECT*/
