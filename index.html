@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.typekit.net/nuf3vky.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/solid.css" />
+
+  <title>Liz Scudeller - Portfolio</title>
+</head>
+
+<body>
+  <header>
+    <a id="logo" href="#home">la:dev</a>
+
+    <button class="mobile-nav-toggle" aria-controls="menu" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <div class="navbar" id="menu" data-visible="false">
+      <ul class="menu menu-items">
+        <li id="Home" class="active"><a href="#home">Home</a></li>
+        <li id="Experiences"><a href="#experiences">Experience</a></li>
+        <li id="Projects"><a href="#projects">Projects</a></li>
+      </ul>
+
+      <ul class="menu menu-icons">
+        <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/lizscudeller/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a target="_blank" rel="noreferrer" href="https://codepen.io/liz-scudeller" aria-label="CodePen"><i class="fa-brands fa-codepen"></i></a></li>
+      </ul>
+
+      <ul>
+        <li><button class="contact-btn" onclick="sendEmail()">Get in Touch</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="section" data-title="Home">
+    <div>
+      <div>
+        <p>LIZ SCUDELLER</p>
+
+        <h1>
+          Frontend Developer
+        </h1>
+
+        <p class="hero-subtitle">
+          I build conversion-focused websites and SEO-driven page structures, using WordPress, frontend fundamentals, and automation to scale content and optimization workflows.
+        </p>
+
+        <button class="contact-btn" onclick="window.location.href='#projects'">View Work</button>
+
+        <!-- Update this href to your real resume file path -->
+        <button class="resume-btn" onclick="window.open('assets/docs/Liz Alvarez Scudeller Resume_2026.pdf', '_blank')">
+          Download Resume
+        </button>
+      </div>
+    </div>
+
+    <div class="scroll-container">
+      <div><img src="assets/images/icons/scroll.png" alt="" /></div>
+      <div class="scroll"><a href="#experiences">scroll down</a></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experiences" class="section custom-scrollbar" data-title="Experience">
+    <div>
+      <h1 class="page_title">Experience</h1>
+
+      <div class="experience_container even_grid custom_scrollbar">
+        <div class="exp exp-1">
+          <p class="current">CURRENT ROLE</p>
+
+          <div class="card">
+            <div>
+              <span>2020 – Present</span>
+              <p class="exp_cia">Home Service Solutions</p>
+            </div>
+
+            <h3>Web & Frontend Developer</h3><br>
+I design, build, and maintain conversion-focused websites and landing pages using WordPress and frontend
+              fundamentals (HTML, CSS, JavaScript). I lead on-page SEO across service and location pages and use Google
+              Analytics and Google Search Console to guide performance, structure, and content decisions.
+              <br><br>
+            <ul>
+              <li>Designed, built, and maintained WordPress websites and landing pages with a strong focus on usability, responsiveness, performance, and conversion.</li>
+              <li>Led on-page SEO implementation across service and location pages, improving organic visibility and supporting local search growth for multi-city service areas.</li>
+              <li>Worked hands-on with Google Analytics and Google Search Console to analyze traffic, user behavior, and page performance, using data to guide frontend, content, and structural decisions.</li>
+              <li>Built scalable page structures and reusable sections to support continuous service and location expansion without redesign overhead.</li>
+              <li>Ensured visual and structural consistency across multiple services, campaigns, and internal tools.</li>
+              <li>Collaborated with marketing and leadership teams to translate business goals into clear, measurable digital solutions.</li>
+              <li>Integrated AI-assisted tools into the workflow to support SEO content planning, automation, ideation, and efficiency.</li>
+              <li>Produced supporting digital assets and internal materials (presentations, videos, internal documentation) aligned with technical, SEO, and business objectives.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp exp-2">
+          <div class="card">
+            <div>
+              <span>2020 – 2021</span>
+              <p class="exp_cia">The Chill Brothers</p>
+            </div>
+
+            <h3>Graphic Web Designer</h3>
+            <br>
+            <ul>
+              <li>Website development using HTML, CSS, Javascript, jQuery, Bootstrap, PHP (Wordpress).</li>
+              <li>Google Analytics, Google Business and Google Search Console implementation.</li>
+              <li>Brand identity creation using Adobe Illustrator and Photoshop.</li>
+              <li>Internal documents and presentations creation using InDesign and Illustrator.</li>
+              <li>Website migration to wordpress using PHP, HTML, CSS and JavaScript.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section" data-title="Projects">
+    <div>
+      <h1 class="page_title">Projects</h1>
+
+      <div class="project-container even_grid custom_scrollbar">
+
+        <!-- ADD THIS: SEO AI TOOL (Featured) -->
+        <div class="card_projects">
+          <div class="card_header">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>SEO AI Tool</h3>
+            <p>In Development</p>
+          </div>
+
+          <div class="card_content">
+            <h3>SEO AI Tool</h3>
+            <p>
+              SEO automation platform that turns Search Console data into content opportunities and actionable tasks.
+              Built with <b>React, Node.js, Express</b> and analytics-driven workflows.
+              <div class="project_icons">
+                <i class="fa-brands fa-react"></i>
+                <i class="fa-brands fa-node-js"></i>
+                <i class="fa-solid fa-server"></i>
+              </div>
+            </p>
+
+            <!-- Update links if needed -->
+            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card_projects">
+          <div class="card_header">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>Portfolio</h3>
+            <p>Liz Alvarez Scudeller</p>
+          </div>
+          <div class="card_content">
+            <h3>Portfolio</h3>
+            <p>
+              A personal portfolio showcasing projects built with <b>HTML, CSS and JavaScript</b>.
+              <div class="project_icons">
+                <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-js"></i>
+              </div>
+            </p>
+            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Portfolio">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card_projects">
+          <div class="card_header">
+            <i class="fa-brands fa-js"></i>
+            <h3>Star Wars Cards</h3>
+            <p>Liz Alvarez Scudeller</p>
+          </div>
+          <div class="card_content">
+            <h3>Star Wars Cards</h3>
+            <p>
+              Interactive Star Wars character profiles using <b>HTML, CSS and JavaScript</b>.
+              <div class="project_icons">
+                <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-js"></i>
+              </div>
+            </p>
+            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Star-Wars---Generate-Cards">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card_projects">
+          <div class="card_header">
+            <i class="fa-brands fa-react"></i>
+            <h3>Movie Browser</h3>
+            <p>Liz Alvarez Scudeller</p>
+          </div>
+          <div class="card_content">
+            <h3>Movie Browser</h3>
+            <p>
+              Explore movies with details like posters, release dates, and ratings using <b>React and an API</b>.
+              <div class="project_icons"><i class="fa-brands fa-react"></i><i class="fa-solid fa-database"></i></div>
+            </p>
+            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Movie-Browser">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card_projects">
+          <div class="card_header">
+            <i class="fa-brands fa-python"></i>
+            <h3>Banking App</h3>
+            <p>Liz Alvarez Scudeller</p>
+          </div>
+          <div class="card_content">
+            <h3>Banking App</h3>
+            <p>
+              Simulates basic banking functionalities like withdrawals, deposits, and transaction logging using <b>Python</b>.
+              <div class="project_icons"><i class="fa-brands fa-python"></i></div>
+            </p>
+            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Banking-App">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
