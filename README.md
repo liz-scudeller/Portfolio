@@ -1,52 +1,28 @@
-# Portfolio Project
+# Portfolio — Liz Alvarez Scudeller
 
-Welcome to my portfolio project! This project showcases my skills and experiences as a Full Stack Developer and Designer.
+Personal portfolio showcasing my work as a **Web & Frontend Developer with a strong design background**.
 
-## Table of Contents
+This project focuses on **clean UI, responsiveness, and conversion-oriented layouts**, combining frontend fundamentals with thoughtful visual design.
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## 🔗 Live Website
+https://lizalvarezscudeller.netlify.app
 
-## Introduction
+## ✨ Highlights
+- Responsive, mobile-first layout
+- Clear sectioning for experience and projects
+- Smooth navigation and active section highlighting
+- Design-driven structure with frontend implementation
 
-This portfolio project serves as a showcase of my work, experiences, and skills. It provides visitors with an overview of the projects I've worked on, my professional experiences, and how to get in touch with me.
+## 🛠 Tech Stack
+- HTML5  
+- CSS3 (Flexbox, Grid)  
+- JavaScript (ES6)  
+- jQuery  
+- Font Awesome  
 
-## Features
+## 📌 Purpose
+This portfolio was built to present my professional experience, selected projects, and approach to building usable, well-structured websites for real businesses.
 
-- Responsive design for optimal viewing across devices
-- Sections for displaying professional experiences and projects
-- Active menu highlighting based on the current section being viewed
+---
 
-## Technologies Used
-
-- HTML
-- CSS (including Flexbox and Grid)
-- JavaScript
-- jQuery
-- Font Awesome (for icons)
-
-## Getting Started
-
-To get started with this project, simply clone the repository to your local machine:
-git clone https://github.com/your-username/your-project.git
-
-
-## Usage
-
-1. Open the `index.html` file in your web browser.
-2. Explore the different sections of the portfolio, including experiences and projects.
-3. Click on the menu items to navigate between sections.
-4. Enjoy browsing my portfolio!
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+© Liz Alvarez Scudeller
