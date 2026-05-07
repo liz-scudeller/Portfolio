@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="https://use.typekit.net/nuf3vky.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" />
   <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
@@ -15,219 +17,300 @@
 </head>
 
 <body>
+  <!-- HEADER / NAVIGATION -->
   <header>
-    <a id="logo" href="#home">la:dev</a>
+    <a id="logo" href="#home" aria-label="Liz Scudeller portfolio">la<span>:</span>dev</a>
 
     <button class="mobile-nav-toggle" aria-controls="menu" aria-expanded="false">
       <span class="sr-only">Menu</span>
     </button>
 
-    <div class="navbar" id="menu" data-visible="false">
+    <nav class="navbar" id="menu" data-visible="false" aria-label="Primary navigation">
       <ul class="menu menu-items">
         <li id="Home" class="active"><a href="#home">Home</a></li>
-        <li id="Experiences"><a href="#experiences">Experience</a></li>
+        <li id="Experience"><a href="#experiences">Experience</a></li>
         <li id="Projects"><a href="#projects">Projects</a></li>
       </ul>
 
-      <ul class="menu menu-icons">
+      <ul class="menu menu-icons" aria-label="Social links">
         <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/lizscudeller/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
         <li><a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
         <li><a target="_blank" rel="noreferrer" href="https://codepen.io/liz-scudeller" aria-label="CodePen"><i class="fa-brands fa-codepen"></i></a></li>
       </ul>
 
-      <ul>
-        <li><button class="contact-btn" onclick="sendEmail()">Get in Touch</button></li>
-      </ul>
-    </div>
+      <button class="contact-btn nav-contact" onclick="sendEmail()">
+        <i class="fa-regular fa-envelope"></i>
+        Get in Touch
+      </button>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="section" data-title="Home">
-    <div>
-      <div>
-        <p>LIZ SCUDELLER</p>
-
-        <h1>
-          Frontend Developer
-        </h1>
-
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home" class="hero-section section" data-title="Home">
+      <div class="hero-copy">
+        <p class="eyebrow">Liz Scudeller</p>
+        <h1>Full Stack <span>Developer</span> & Technical Business <span>Analyst</span></h1>
         <p class="hero-subtitle">
-          I build conversion-focused websites and SEO-driven page structures, using WordPress, frontend fundamentals, and automation to scale content and optimization workflows.
+          I build full-stack applications, analytics platforms, automation systems, and AI-assisted workflows that improve operational efficiency, reporting visibility, and digital performance.
         </p>
 
-        <button class="contact-btn" onclick="window.location.href='#projects'">View Work</button>
-
-        <!-- Update this href to your real resume file path -->
-        <button class="resume-btn" onclick="window.open('assets/docs/Liz Alvarez Scudeller Resume_2026.pdf', '_blank')">
-          Download Resume
-        </button>
-      </div>
-    </div>
-
-    <div class="scroll-container">
-      <div><img src="assets/images/icons/scroll.png" alt="" /></div>
-      <div class="scroll"><a href="#experiences">scroll down</a></div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experiences" class="section custom-scrollbar" data-title="Experience">
-    <div>
-      <h1 class="page_title">Experience</h1>
-
-      <div class="experience_container even_grid custom_scrollbar">
-        <div class="exp exp-1">
-          <p class="current">CURRENT ROLE</p>
-
-          <div class="card">
-            <div>
-              <span>2020 – Present</span>
-              <p class="exp_cia">Home Service Solutions</p>
-            </div>
-
-            <h3>Web & Frontend Developer</h3><br>
-I design, build, and maintain conversion-focused websites and landing pages using WordPress and frontend
-              fundamentals (HTML, CSS, JavaScript). I lead on-page SEO across service and location pages and use Google
-              Analytics and Google Search Console to guide performance, structure, and content decisions.
-              <br><br>
-            <ul>
-              <li>Designed, built, and maintained WordPress websites and landing pages with a strong focus on usability, responsiveness, performance, and conversion.</li>
-              <li>Led on-page SEO implementation across service and location pages, improving organic visibility and supporting local search growth for multi-city service areas.</li>
-              <li>Worked hands-on with Google Analytics and Google Search Console to analyze traffic, user behavior, and page performance, using data to guide frontend, content, and structural decisions.</li>
-              <li>Built scalable page structures and reusable sections to support continuous service and location expansion without redesign overhead.</li>
-              <li>Ensured visual and structural consistency across multiple services, campaigns, and internal tools.</li>
-              <li>Collaborated with marketing and leadership teams to translate business goals into clear, measurable digital solutions.</li>
-              <li>Integrated AI-assisted tools into the workflow to support SEO content planning, automation, ideation, and efficiency.</li>
-              <li>Produced supporting digital assets and internal materials (presentations, videos, internal documentation) aligned with technical, SEO, and business objectives.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp exp-2">
-          <div class="card">
-            <div>
-              <span>2020 – 2021</span>
-              <p class="exp_cia">The Chill Brothers</p>
-            </div>
-
-            <h3>Graphic Web Designer</h3>
-            <br>
-            <ul>
-              <li>Website development using HTML, CSS, Javascript, jQuery, Bootstrap, PHP (Wordpress).</li>
-              <li>Google Analytics, Google Business and Google Search Console implementation.</li>
-              <li>Brand identity creation using Adobe Illustrator and Photoshop.</li>
-              <li>Internal documents and presentations creation using InDesign and Illustrator.</li>
-              <li>Website migration to wordpress using PHP, HTML, CSS and JavaScript.</li>
-            </ul>
-          </div>
+        <div class="hero-actions">
+          <a class="contact-btn" href="#projects">
+            View My Work
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="resume-btn" onclick="window.open('assets/docs/Liz Alvarez Scudeller Resume_2026.pdf', '_blank')">
+            <i class="fa-solid fa-download"></i>
+            Download Resume
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section" data-title="Projects">
-    <div>
-      <h1 class="page_title">Projects</h1>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/images/hero/home-hero.png" alt="" />
+      </div>
 
-      <div class="project-container even_grid custom_scrollbar">
+      <a class="scroll-container" href="#experiences" aria-label="Scroll to experience">
+        <span></span>
+        <small>scroll down</small>
+        <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </section>
 
-        <!-- ADD THIS: SEO AI TOOL (Featured) -->
-        <div class="card_projects">
-          <div class="card_header">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <h3>SEO AI Tool</h3>
-            <p>In Development</p>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experiences" class="experience-section section" data-title="Experience">
+      <div class="section-heading experience-heading">
+        <div>
+          <h2>Work <span>Experience</span> <i class="fa-solid fa-wand-magic-sparkles"></i></h2>
+        </div>
+        <p>A track record of building solutions that improve operations, drive performance, and support business growth.</p>
+      </div>
+
+      <div class="experience-grid">
+        <article class="experience-card">
+          <div class="role-column">
+            <div class="role-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div>
+              <div class="experience-meta">
+                <span>Current Role</span>
+              </div>
+              <h3>Full Stack Developer & Technical Business Analyst</h3>
+              <p class="company">Home Service Solutions</p>
+              <div class="role-detail">
+                <span><i class="fa-regular fa-calendar"></i>2020 - Present</span>
+                <span><i class="fa-solid fa-location-dot"></i>Remote</span>
+              </div>
+            </div>
           </div>
 
-          <div class="card_content">
-            <h3>SEO AI Tool</h3>
-            <p>
-              SEO automation platform that turns Search Console data into content opportunities and actionable tasks.
-              Built with <b>React, Node.js, Express</b> and analytics-driven workflows.
-              <div class="project_icons">
+          <div class="experience-content">
+            <p>I design, build and maintain full-stack applications, analytics dashboards, reporting systems, and automation workflows that improve operational efficiency, data visibility, and digital performance. I work closely with stakeholders to translate business needs into scalable, data-driven solutions.</p>
+            <ul class="achievement-list">
+              <li>Develop full-stack applications and internal tools using React, Node.js, Express, SQL, and REST APIs.</li>
+              <li>Built and maintained API integrations with third-party platforms and internal systems.</li>
+              <li>Built dashboards and automated reporting systems integrating CRM, analytics and operational data.</li>
+              <li>Developed AI-assisted workflows using OpenAI APIs to support content, reporting and automation.</li>
+              <li>Integrated Google Analytics 4, Google Search Console and Google Tag Manager to track performance and SEO.</li>
+              <li>Collaborated with leadership and operations teams to align technical solutions with business goals.</li>
+              <li>Created automation workflows that reduce manual tasks and improve operational efficiency.</li>
+              <li>Continuously iterate, troubleshoot and enhance platforms based on data, feedback and user needs.</li>
+            </ul>
+          </div>
+
+          <aside class="tech-stack" aria-label="Tech stack for current role">
+            <h4>Tech Stack</h4>
+            <ul>
+              <li><i class="fa-brands fa-react"></i>React</li>
+              <li><i class="fa-brands fa-node-js"></i>Node.js</li>
+              <li><i class="fa-solid fa-server"></i>Express</li>
+              <li><i class="fa-solid fa-database"></i>SQL</li>
+              <li><i class="fa-brands fa-js"></i>JavaScript / TypeScript</li>
+              <li><i class="fa-solid fa-code-branch"></i>REST APIs</li>
+              <li><i class="fa-solid fa-chart-column"></i>GA4 / GSC / GTM</li>
+              <li><i class="fa-solid fa-brain"></i>OpenAI API</li>
+              <li><i class="fa-brands fa-github"></i>Git & GitHub</li>
+            </ul>
+          </aside>
+        </article>
+
+        <article class="experience-card">
+          <div class="role-column">
+            <div class="role-icon"><i class="fa-solid fa-user-group"></i></div>
+            <div>
+              <div class="experience-meta">
+                <span>2020 - 2021</span>
+              </div>
+              <h3>Web Developer</h3>
+              <p class="company">The Chill Brothers</p>
+              <div class="role-detail">
+                <span><i class="fa-regular fa-calendar"></i>2020 - 2021</span>
+                <span><i class="fa-solid fa-location-dot"></i>Vancouver, Canada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-content">
+            <p>Developed websites and digital assets while supporting branding, analytics, and SEO initiatives to improve online presence and business visibility.</p>
+            <ul class="achievement-list">
+              <li>Developed websites using HTML, CSS, JavaScript, jQuery, Bootstrap, PHP and WordPress.</li>
+              <li>Designed internal documents and presentations using InDesign and Illustrator.</li>
+              <li>Implemented Google Analytics, Google Business Profile and Google Search Console.</li>
+              <li>Migrated websites to WordPress ensuring performance, responsiveness and SEO best practices.</li>
+              <li>Created brand identity and visual assets using Adobe Illustrator and Photoshop.</li>
+              <li>Collaborated with clients to deliver digital solutions aligned with business goals.</li>
+            </ul>
+          </div>
+
+          <aside class="tech-stack" aria-label="Tech stack for web developer role">
+            <h4>Tech Stack</h4>
+            <ul>
+              <li><i class="fa-brands fa-wordpress"></i>WordPress</li>
+              <li><i class="fa-brands fa-html5"></i>HTML / CSS</li>
+              <li><i class="fa-brands fa-js"></i>JavaScript / jQuery</li>
+              <li><i class="fa-brands fa-php"></i>PHP</li>
+              <li><i class="fa-solid fa-pen-nib"></i>Adobe Illustrator</li>
+              <li><i class="fa-solid fa-file-lines"></i>Adobe InDesign</li>
+              <li><i class="fa-solid fa-chart-simple"></i>Google Analytics</li>
+              <li><i class="fa-solid fa-magnifying-glass-chart"></i>GSC / GBP</li>
+            </ul>
+          </aside>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section section" data-title="Projects">
+      <div class="section-heading">
+        <div>
+          <h2>Projects <i class="fa-solid fa-wand-magic-sparkles"></i></h2>
+        </div>
+        <p>A selection of projects that showcase my skills in development, analytics, automation and AI.</p>
+        <a href="https://github.com/liz-scudeller" target="_blank" rel="noreferrer">View all projects <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-icon magic"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="project-body">
+            <h3>SEO AI & Analytics Platform</h3>
+            <p class="tech">React • Node.js • OpenAI • GA4</p>
+            <p>AI-powered platform that analyzes Search Console and analytics data to find opportunities, generate AI-assisted recommendations and automate reporting.</p>
+            <div class="project-footer">
+              <div class="project-icons">
                 <i class="fa-brands fa-react"></i>
                 <i class="fa-brands fa-node-js"></i>
+                <i class="fa-solid fa-brain"></i>
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">Private Repository <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon network"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="project-body">
+            <h3>CRM Integration & Reporting System</h3>
+            <p class="tech">Node.js • APIs • SQL • Automation</p>
+            <p>System that integrates CRM and operational data through APIs and automated workflows to improve accuracy, auditing and operational reporting.</p>
+            <div class="project-footer">
+              <div class="project-icons">
+                <i class="fa-brands fa-node-js"></i>
                 <i class="fa-solid fa-server"></i>
+                <i class="fa-solid fa-database"></i>
+                <i class="fa-solid fa-code-branch"></i>
               </div>
-            </p>
-
-            <!-- Update links if needed -->
-            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">GitHub (Private Repository)</a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">Private Repository <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card_projects">
-          <div class="card_header">
-            <i class="fa-brands fa-css3-alt"></i>
-            <h3>Portfolio</h3>
-            <p>Liz Alvarez Scudeller</p>
-          </div>
-          <div class="card_content">
-            <h3>Portfolio</h3>
-            <p>
-              A personal portfolio showcasing projects built with <b>HTML, CSS and JavaScript</b>.
-              <div class="project_icons">
-                <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-js"></i>
+        <article class="project-card">
+          <div class="project-icon chart"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="project-body">
+            <h3>Automated Reporting Dashboard</h3>
+            <p class="tech">SQL • Dashboards • KPI Reporting</p>
+            <p>Automated reporting system that centralizes data into KPI dashboards, reducing manual work and providing visibility for better decision-making.</p>
+            <div class="project-footer">
+              <div class="project-icons">
+                <i class="fa-solid fa-database"></i>
+                <i class="fa-solid fa-chart-column"></i>
+                <i class="fa-solid fa-gear"></i>
               </div>
-            </p>
-            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Portfolio">GitHub</a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">Private Repository <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card_projects">
-          <div class="card_header">
-            <i class="fa-brands fa-js"></i>
-            <h3>Star Wars Cards</h3>
-            <p>Liz Alvarez Scudeller</p>
-          </div>
-          <div class="card_content">
-            <h3>Star Wars Cards</h3>
-            <p>
-              Interactive Star Wars character profiles using <b>HTML, CSS and JavaScript</b>.
-              <div class="project_icons">
-                <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-js"></i>
+        <article class="project-card">
+          <div class="project-icon wordpress"><i class="fa-brands fa-wordpress"></i></div>
+          <div class="project-body">
+            <h3>HSS Website & Local SEO System</h3>
+            <p class="tech">WordPress • ACF • SEO • Analytics</p>
+            <p>WordPress website and scalable local SEO system focused on performance, conversion and local search visibility using GA4, GTM and Search Console.</p>
+            <div class="project-footer">
+              <div class="project-icons">
+                <i class="fa-brands fa-wordpress"></i>
+                <i class="fa-solid fa-file-code"></i>
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <i class="fa-solid fa-chart-simple"></i>
               </div>
-            </p>
-            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Star-Wars---Generate-Cards">GitHub</a>
+              <a target="_blank" rel="noreferrer" href="https://homeservicesolutions.ca/">Live Website <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card_projects">
-          <div class="card_header">
-            <i class="fa-brands fa-react"></i>
+        <article class="project-card">
+          <div class="project-icon react"><i class="fa-brands fa-react"></i></div>
+          <div class="project-body">
             <h3>Movie Browser</h3>
-            <p>Liz Alvarez Scudeller</p>
+            <p class="tech">React • API</p>
+            <p>React application that consumes a movie API and displays searchable movie details including posters, ratings and release information.</p>
+            <div class="project-footer">
+              <div class="project-icons">
+                <i class="fa-brands fa-react"></i>
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Movie-Browser">GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="card_content">
-            <h3>Movie Browser</h3>
-            <p>
-              Explore movies with details like posters, release dates, and ratings using <b>React and an API</b>.
-              <div class="project_icons"><i class="fa-brands fa-react"></i><i class="fa-solid fa-database"></i></div>
-            </p>
-            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Movie-Browser">GitHub</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card_projects">
-          <div class="card_header">
-            <i class="fa-brands fa-python"></i>
-            <h3>Banking App</h3>
-            <p>Liz Alvarez Scudeller</p>
+        <article class="project-card">
+          <div class="project-icon code"><i class="fa-solid fa-code"></i></div>
+          <div class="project-body">
+            <h3>Portfolio Website</h3>
+            <p class="tech">HTML • CSS • JavaScript</p>
+            <p>Personal portfolio website built with HTML, CSS and JavaScript to showcase projects and experience.</p>
+            <div class="project-footer">
+              <div class="project-icons">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Portfolio">GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="card_content">
-            <h3>Banking App</h3>
-            <p>
-              Simulates basic banking functionalities like withdrawals, deposits, and transaction logging using <b>Python</b>.
-              <div class="project_icons"><i class="fa-brands fa-python"></i></div>
-            </p>
-            <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Banking-App">GitHub</a>
-          </div>
-        </div>
-
+        </article>
       </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / OPEN TO OPPORTUNITIES CTA -->
+  <footer class="site-footer">
+    <div class="opportunity-card">
+      <div>
+        <span class="star"><i class="fa-regular fa-star"></i></span>
+        <p>I'm always open to new opportunities and exciting projects.<strong>Let's build something amazing together!</strong></p>
+      </div>
+      <button class="contact-btn" onclick="sendEmail()">
+        <i class="fa-regular fa-envelope"></i>
+        Get in Touch
+      </button>
     </div>
-  </section>
+  </footer>
 
   <script src="script.js"></script>
 </body>

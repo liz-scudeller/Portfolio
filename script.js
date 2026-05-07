@@ -38,8 +38,7 @@ $(window).on('load resize scroll', function() {
 	$('.section').each(function() {
 
     var sectionTitle = $(this).data("title");
-    var sectionIndex = $(this).index() -1;
-    var menuItemTitle = $('.menu-items li').get(sectionIndex);
+    var menuItemTitle = $('#' + sectionTitle);
 
 		if ($(this).isInViewport()) {
       $(menuItemTitle).addClass('active')
@@ -51,6 +50,11 @@ $(window).on('load resize scroll', function() {
 
 });
 //End Active Section and Menu
+
+$('.menu-items a').on('click', function() {
+  menuNav.setAttribute('data-visible', false);
+  navToggle.setAttribute('aria-expanded', false);
+});
 
 });
 
