@@ -104,6 +104,87 @@ $('.experience-modal-backdrop, .experience-modal-close').on('click', function() 
   window.scrollTo(0, lockedScrollY);
 });
 
+$('.screen-modal-trigger').on('click', function() {
+  const $button = $(this);
+  const $image = $button.find('img');
+  const $figure = $button.closest('figure');
+  const caption = $figure.find('strong').first().text() || $image.attr('alt') || '';
+  const src = $image.attr('src');
+  const alt = $image.attr('alt') || '';
+  const $modal = $('.screen-modal');
+
+  lockedScrollY = window.scrollY || window.pageYOffset || 0;
+
+  $('.screen-modal-image').attr({
+    src,
+    alt
+  });
+  $('.screen-modal-caption').text(caption);
+
+  $modal.addClass('is-open').attr('aria-hidden', 'false');
+  $('body')
+    .addClass('modal-open')
+    .css('top', `-${lockedScrollY}px`);
+});
+
+$('.screen-modal-backdrop, .screen-modal-close').on('click', function() {
+  $('.screen-modal').removeClass('is-open').attr('aria-hidden', 'true');
+  $('.screen-modal-image').attr({
+    src: '',
+    alt: ''
+  });
+  $('.screen-modal-caption').text('');
+  $('body')
+    .removeClass('modal-open')
+    .css('top', '');
+  window.scrollTo(0, lockedScrollY);
+});
+
+const horizontalScrollSelectors = [
+  '.project-grid',
+  '.experience-grid',
+  '.workflow-grid',
+  '.screens-grid'
+];
+
+function mountScrollButtons() {
+  horizontalScrollSelectors.forEach((selector) => {
+    $(selector).each(function() {
+      const $track = $(this);
+
+      if ($track.find('.scroll-arrow-btn').length) {
+        return;
+      }
+
+      $track.append(`
+        <button class="scroll-arrow-btn" type="button" aria-label="Scroll horizontally">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      `);
+    });
+  });
+}
+
+mountScrollButtons();
+
+$(document).on('click', '.scroll-arrow-btn', function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const track = $(this).parent().get(0);
+
+  if (!track) {
+    return;
+  }
+
+  const amount = Math.max(track.clientWidth * 0.86, 220);
+
+  track.scrollBy({
+    left: amount,
+    behavior: 'smooth'
+  });
+});
+
 });
 
 //jquery end

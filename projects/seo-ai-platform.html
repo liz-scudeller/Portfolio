@@ -168,7 +168,9 @@
     <section class="screens-section">
       <div class="screens-grid">
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-dashboard.webp" alt="Dashboard overview" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open Dashboard Overview image">
+            <img src="../assets/images/detail_pages/seo-copilot-dashboard.webp" alt="Dashboard overview" />
+          </button>
           <figcaption>
             <span>01</span>
             <strong>Dashboard Overview</strong>
@@ -177,7 +179,9 @@
         </figure>
 
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-action-plan.webp" alt="Action plan" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open Action Plan image">
+            <img src="../assets/images/detail_pages/seo-copilot-action-plan.webp" alt="Action plan" />
+          </button>
           <figcaption>
             <span>02</span>
             <strong>Action Plan</strong>
@@ -186,7 +190,9 @@
         </figure>
 
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-search-console.webp" alt="Search opportunities" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open Search Opportunities image">
+            <img src="../assets/images/detail_pages/seo-copilot-search-console.webp" alt="Search opportunities" />
+          </button>
           <figcaption>
             <span>03</span>
             <strong>Search Opportunities</strong>
@@ -195,7 +201,9 @@
         </figure>
 
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-task-detail.webp" alt="Task detail" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open Task Detail image">
+            <img src="../assets/images/detail_pages/seo-copilot-task-detail.webp" alt="Task detail" />
+          </button>
           <figcaption>
             <span>04</span>
             <strong>Task Detail</strong>
@@ -204,7 +212,9 @@
         </figure>
 
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-task-detail_2.webp" alt="Task analysis" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open Task Analysis image">
+            <img src="../assets/images/detail_pages/seo-copilot-task-detail_2.webp" alt="Task analysis" />
+          </button>
           <figcaption>
             <span>05</span>
             <strong>Task Analysis</strong>
@@ -213,7 +223,9 @@
         </figure>
 
         <figure>
-          <img src="../assets/images/detail_pages/seo-copilot-action-plan.webp" alt="WordPress integration" />
+          <button class="screen-modal-trigger" type="button" aria-label="Open WordPress Integration image">
+            <img src="../assets/images/detail_pages/seo-copilot-action-plan.webp" alt="WordPress integration" />
+          </button>
           <figcaption>
             <span>06</span>
             <strong>WordPress Integration</strong>
@@ -281,6 +293,17 @@
       </div>
     </section>
   </main>
+
+  <div class="screen-modal" aria-hidden="true">
+    <div class="screen-modal-backdrop"></div>
+    <div class="screen-modal-panel" role="dialog" aria-modal="true" aria-labelledby="screen-modal-title">
+      <button class="screen-modal-close" type="button" aria-label="Close image preview">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img class="screen-modal-image" src="" alt="" />
+      <p class="screen-modal-caption" id="screen-modal-title"></p>
+    </div>
+  </div>
 
   <script src="../script.js"></script>
 </body>

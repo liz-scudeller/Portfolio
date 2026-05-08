@@ -986,6 +986,7 @@ main {
   }
 
   .project-grid {
+    position: relative;
     grid-auto-columns: minmax(340px, 82vw);
     grid-auto-flow: column;
     grid-template-columns: none;
@@ -996,12 +997,31 @@ main {
     -webkit-overflow-scrolling: touch;
   }
 
+  .project-grid .scroll-arrow-btn {
+    position: sticky;
+    right: 10px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    align-self: center;
+    margin-left: -46px;
+    border: 1px solid rgba(130, 66, 214, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--purple-dark);
+    font-size: 13px;
+    box-shadow: 0 10px 24px rgba(62, 37, 82, 0.12);
+    z-index: 2;
+  }
+
   .project-card {
     min-height: 190px;
     scroll-snap-align: start;
   }
 
   .experience-grid {
+    position: relative;
     grid-auto-columns: 90vw;
     grid-auto-flow: column;
     grid-template-columns: none;
@@ -1010,6 +1030,32 @@ main {
     padding-bottom: 10px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .experience-grid .scroll-arrow-btn {
+    position: sticky;
+    right: 10px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    align-self: center;
+    margin-left: -46px;
+    border: 1px solid rgba(130, 66, 214, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--purple-dark);
+    font-size: 13px;
+    box-shadow: 0 10px 24px rgba(62, 37, 82, 0.12);
+    z-index: 2;
+  }
+
+  .scroll-arrow-btn {
+    padding: 0;
+  }
+
+  .scroll-arrow-btn i {
+    font-size: 13px;
   }
 
   .experience-card {
