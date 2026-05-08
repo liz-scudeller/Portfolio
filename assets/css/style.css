@@ -706,6 +706,10 @@ main {
   display: contents;
 }
 
+.experience-modal {
+  display: none;
+}
+
 .achievement-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -968,7 +972,10 @@ main {
 
   .projects-section {
     justify-content: center;
-    padding-bottom: 16px;
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 8px;
   }
 
   .project-grid {
@@ -1021,21 +1028,100 @@ main {
     display: none;
   }
 
-  .experience-card.is-expanded .experience-extra {
-    display: block;
-  }
-
-  .experience-card.is-expanded .tech-stack {
-    display: block;
-    margin-top: 16px;
-  }
-
   .experience-content {
     align-self: start;
   }
 
   .role-icon {
     display: none;
+  }
+
+  .experience-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, visibility 180ms ease;
+  }
+
+  .experience-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .experience-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 17, 25, 0.42);
+    backdrop-filter: blur(8px);
+  }
+
+  .experience-modal-panel {
+    position: relative;
+    align-self: end;
+    max-height: min(82vh, 760px);
+    padding: 56px 18px 24px;
+    overflow-y: auto;
+    border-radius: 20px 20px 0 0;
+    background: rgba(255, 252, 249, 0.98);
+    box-shadow: 0 -20px 60px rgba(43, 24, 58, 0.18);
+    transform: translateY(18px);
+    transition: transform 180ms ease;
+  }
+
+  .experience-modal.is-open .experience-modal-panel {
+    transform: translateY(0);
+  }
+
+  .experience-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--purple-dark);
+  }
+
+  .experience-modal-copy h3 {
+    margin: 0;
+    color: #24133a;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .experience-modal-copy .company {
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+
+  .experience-modal-copy .role-detail {
+    margin-bottom: 16px;
+  }
+
+  .experience-modal-copy .experience-summary {
+    margin: 0 0 18px;
+    color: #241f28;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .experience-modal-copy .achievement-list {
+    grid-template-columns: 1fr;
+    margin-bottom: 18px;
+  }
+
+  .experience-modal-copy .tech-stack {
+    display: block;
+    margin-top: 0;
   }
 }
 
@@ -1053,7 +1139,8 @@ main {
   }
 
   .site-footer {
-    padding-top: 8px;
+    padding-top: 0;
+    padding-bottom: 16px;
   }
 
   .hero-actions,

@@ -59,11 +59,42 @@ $('.menu-items a').on('click', function() {
 $('.experience-toggle').on('click', function() {
   const $button = $(this);
   const $card = $button.closest('.experience-card');
-  const expanded = $button.attr('aria-expanded') === 'true';
+  const isMobile = window.matchMedia('(max-width: 980px)').matches;
 
-  $button.attr('aria-expanded', !expanded);
-  $button.text(expanded ? 'View details' : 'Hide details');
-  $card.toggleClass('is-expanded', !expanded);
+  if (!isMobile) {
+    return;
+  }
+
+  const $modal = $('.experience-modal');
+  const $content = $('.experience-modal-content');
+  const title = $card.find('h3').first().text();
+  const company = $card.find('.company').first().text();
+  const roleMeta = $card.find('.experience-meta').first().html();
+  const roleDetail = $card.find('.role-detail').first().prop('outerHTML');
+  const summary = $card.find('.experience-content > p').first().text();
+  const achievements = $card.find('.achievement-list').first().prop('outerHTML');
+  const techStack = $card.find('.tech-stack').first().prop('outerHTML');
+
+  $content.html(`
+    <div class="experience-modal-copy">
+      <div class="experience-meta">${roleMeta}</div>
+      <h3 id="experience-modal-title">${title}</h3>
+      <p class="company">${company}</p>
+      ${roleDetail}
+      <p class="experience-summary">${summary}</p>
+      ${achievements}
+      ${techStack}
+    </div>
+  `);
+
+  $modal.addClass('is-open').attr('aria-hidden', 'false');
+  $('body').css('overflow', 'hidden');
+});
+
+$('.experience-modal-backdrop, .experience-modal-close').on('click', function() {
+  $('.experience-modal').removeClass('is-open').attr('aria-hidden', 'true');
+  $('.experience-modal-content').empty();
+  $('body').css('overflow', '');
 });
 
 });
