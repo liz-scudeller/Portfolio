@@ -1,3 +1,4 @@
+/* Tokens */
 :root {
   --ink: #161119;
   --plum: #2d1739;
@@ -15,6 +16,7 @@
   --container: min(1280px, calc(100vw - 48px));
 }
 
+/* Base Reset */
 *,
 *::before,
 *::after {
@@ -84,6 +86,7 @@ button {
   border: 0;
 }
 
+/* Header + Navigation */
 header {
   position: sticky;
   top: 0;
@@ -215,6 +218,7 @@ main {
   transform: translateY(-3px);
 }
 
+/* Shared Sections */
 .section {
   width: var(--container);
   margin: 0 auto;
@@ -226,6 +230,7 @@ main {
   overflow: hidden;
 }
 
+/* Hero */
 .hero-section {
   position: relative;
   display: grid;
@@ -382,6 +387,7 @@ main {
   text-decoration: none;
 }
 
+/* Projects */
 .projects-section {
   display: flex;
   flex-direction: column;
@@ -579,6 +585,7 @@ main {
   white-space: nowrap;
 }
 
+/* Experience */
 .experience-section {
   position: relative;
   display: flex;
@@ -838,6 +845,7 @@ main {
   font-size: 16px;
 }
 
+/* Footer */
 .site-footer {
   width: var(--container);
   margin: 0 auto;
@@ -849,6 +857,7 @@ main {
   display: none;
 }
 
+/* Responsive */
 @media (max-width: 1180px) {
   .navbar {
     gap: 22px;
@@ -1243,5 +1252,39 @@ main {
 
   .scroll-container {
     display: none;
+  }
+}
+
+@media (max-height: 540px) and (orientation: landscape) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .section,
+  .hero-section,
+  .experience-section,
+  .projects-section {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .hero-section {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(38px, 5vw, 52px);
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .experience-section,
+  .projects-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
