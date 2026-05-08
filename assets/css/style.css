@@ -38,6 +38,13 @@ body {
   line-height: 1.58;
 }
 
+body.modal-open {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 body::before {
   content: "";
   position: absolute;
@@ -1062,11 +1069,14 @@ main {
 
   .experience-modal-panel {
     position: relative;
-    align-self: end;
+    align-self: center;
     max-height: min(82vh, 760px);
     padding: 56px 18px 24px;
     overflow-y: auto;
-    border-radius: 20px 20px 0 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    border-radius: 20px 20px;
     background: rgba(255, 252, 249, 0.98);
     box-shadow: 0 -20px 60px rgba(43, 24, 58, 0.18);
     transform: translateY(18px);

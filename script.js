@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  let lockedScrollY = 0;
 
   const menuNav = document.querySelector(".navbar");
   const navToggle = document.querySelector('.mobile-nav-toggle');
@@ -88,13 +89,19 @@ $('.experience-toggle').on('click', function() {
   `);
 
   $modal.addClass('is-open').attr('aria-hidden', 'false');
-  $('body').css('overflow', 'hidden');
+  lockedScrollY = window.scrollY || window.pageYOffset || 0;
+  $('body')
+    .addClass('modal-open')
+    .css('top', `-${lockedScrollY}px`);
 });
 
 $('.experience-modal-backdrop, .experience-modal-close').on('click', function() {
   $('.experience-modal').removeClass('is-open').attr('aria-hidden', 'true');
   $('.experience-modal-content').empty();
-  $('body').css('overflow', '');
+  $('body')
+    .removeClass('modal-open')
+    .css('top', '');
+  window.scrollTo(0, lockedScrollY);
 });
 
 });
