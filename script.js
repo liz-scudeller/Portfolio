@@ -151,13 +151,19 @@ function mountScrollButtons() {
   horizontalScrollSelectors.forEach((selector) => {
     $(selector).each(function() {
       const $track = $(this);
+      const $host = $track.parent();
+      const existingId = $track.attr('id');
+      const trackId = existingId || `scroll-track-${Math.random().toString(36).slice(2, 10)}`;
 
-      if ($track.find('.scroll-arrow-btn').length) {
+      $track.attr('id', trackId);
+      $host.addClass('scroll-arrow-host');
+
+      if ($host.find('.scroll-arrow-btn').length) {
         return;
       }
 
-      $track.append(`
-        <button class="scroll-arrow-btn" type="button" aria-label="Scroll horizontally">
+      $host.append(`
+        <button class="scroll-arrow-btn" type="button" aria-label="Scroll horizontally" data-scroll-target="${trackId}">
           <i class="fa-solid fa-arrow-right"></i>
         </button>
       `);
@@ -165,13 +171,34 @@ function mountScrollButtons() {
   });
 }
 
+function positionScrollButtons() {
+  $('.scroll-arrow-btn').each(function() {
+    const $button = $(this);
+    const targetId = $button.attr('data-scroll-target');
+    const track = targetId ? document.getElementById(targetId) : null;
+
+    if (!track) {
+      return;
+    }
+
+    const top = track.offsetTop + (track.offsetHeight / 2);
+    $button.css('top', `${top}px`);
+  });
+}
+
 mountScrollButtons();
+positionScrollButtons();
+
+$(window).on('load resize', function() {
+  positionScrollButtons();
+});
 
 $(document).on('click', '.scroll-arrow-btn', function(event) {
   event.preventDefault();
   event.stopPropagation();
 
-  const track = $(this).parent().get(0);
+  const targetId = $(this).attr('data-scroll-target');
+  const track = targetId ? document.getElementById(targetId) : null;
 
   if (!track) {
     return;
