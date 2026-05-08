@@ -594,9 +594,24 @@
   }
 
   .metric-grid,
-  .workflow-grid,
   .tech-grid {
     grid-template-columns: 1fr;
+  }
+
+  .workflow-grid {
+    grid-auto-columns: minmax(220px, 78vw);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .workflow-grid article {
+    scroll-snap-align: start;
   }
 
   .screens-grid {
@@ -626,10 +641,6 @@
 
   .workflow-grid article::after {
     display: none;
-  }
-
-  .workflow-grid {
-    padding-top: 0;
   }
 
   .workflow-grid::before {

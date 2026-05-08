@@ -407,8 +407,8 @@ main {
 
 .project-icon {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 14px;
   display: grid;
   place-items: center;
   width: 58px;
@@ -689,6 +689,23 @@ main {
   align-self: center;
 }
 
+.experience-toggle {
+  display: none;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--purple-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.experience-extra {
+  display: contents;
+}
+
 .achievement-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -850,11 +867,21 @@ main {
     overflow: visible;
   }
 
+  .experience-section,
+  .projects-section {
+    min-height: calc(100vh - 66px);
+    height: calc(100vh - 66px);
+    overflow: hidden;
+  }
+
   header {
     min-height: 66px;
     padding: 0 20px;
   }
 
+  .hero-visual{
+    opacity: 0.3;
+  }
   .mobile-nav-toggle {
     position: relative;
     z-index: 25;
@@ -907,6 +934,7 @@ main {
 
   .menu-icons {
     display: flex;
+    gap: 15px;
   }
 
   .nav-contact {
@@ -960,7 +988,7 @@ main {
   }
 
   .experience-grid {
-    grid-auto-columns: minmax(340px, 86vw);
+    grid-auto-columns: 90vw;
     grid-auto-flow: column;
     grid-template-columns: none;
     overflow-x: auto;
@@ -971,7 +999,7 @@ main {
   }
 
   .experience-card {
-    min-height: 100%;
+    min-height: auto;
     grid-template-columns: 1fr;
     scroll-snap-align: start;
   }
@@ -981,6 +1009,33 @@ main {
     border-bottom: 1px solid var(--line);
     padding-right: 0;
     padding-bottom: 22px;
+    display: flex;
+  }
+
+  .experience-toggle {
+    display: inline-flex;
+  }
+
+  .experience-extra,
+  .experience-card .tech-stack {
+    display: none;
+  }
+
+  .experience-card.is-expanded .experience-extra {
+    display: block;
+  }
+
+  .experience-card.is-expanded .tech-stack {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .experience-content {
+    align-self: start;
+  }
+
+  .role-icon {
+    display: none;
   }
 }
 

@@ -56,6 +56,16 @@ $('.menu-items a').on('click', function() {
   navToggle.setAttribute('aria-expanded', false);
 });
 
+$('.experience-toggle').on('click', function() {
+  const $button = $(this);
+  const $card = $button.closest('.experience-card');
+  const expanded = $button.attr('aria-expanded') === 'true';
+
+  $button.attr('aria-expanded', !expanded);
+  $button.text(expanded ? 'View details' : 'Hide details');
+  $card.toggleClass('is-expanded', !expanded);
+});
+
 });
 
 //jquery end
