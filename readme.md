@@ -1,52 +1,18 @@
-# Portfolio Project
+# Liz Alvarez Scudeller — Portfolio 2026
 
-Welcome to my portfolio project! This project showcases my skills and experiences as a Full Stack Developer and Designer.
+Static HTML, CSS and JavaScript portfolio designed for Netlify.
 
-## Table of Contents
+## Local development
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- Node.js: version 20 or newer
+- Install: `npm install` (no runtime dependencies)
+- Development: `npm run dev`
+- Validation: `npm run check`
+- Production build: `npm run build`
+- Publish directory: `dist`
 
-## Introduction
+## Netlify deployment
 
-This portfolio project serves as a showcase of my work, experiences, and skills. It provides visitors with an overview of the projects I've worked on, my professional experiences, and how to get in touch with me.
+The repository includes `netlify.toml`. For Git-connected deployment, import the repository in Netlify and keep the detected build command (`npm run build`) and publish directory (`dist`). No environment variables or redirects are required.
 
-## Features
-
-- Responsive design for optimal viewing across devices
-- Sections for displaying professional experiences and projects
-- Active menu highlighting based on the current section being viewed
-
-## Technologies Used
-
-- HTML
-- CSS (including Flexbox and Grid)
-- JavaScript
-- jQuery
-- Font Awesome (for icons)
-
-## Getting Started
-
-To get started with this project, simply clone the repository to your local machine:
-git clone https://github.com/your-username/your-project.git
-
-
-## Usage
-
-1. Open the `index.html` file in your web browser.
-2. Explore the different sections of the portfolio, including experiences and projects.
-3. Click on the menu items to navigate between sections.
-4. Enjoy browsing my portfolio!
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+For Netlify Drop, run `npm run build`, then upload the supplied deployment ZIP or drag the contents of `dist` into Netlify Drop.
