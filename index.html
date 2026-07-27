@@ -1,334 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" />
-  <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
-  <link rel="stylesheet" href="assets/fontawesome/css/solid.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/bgt8ufx.css">
-
-  <title>Liz Scudeller - Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Liz Alvarez Scudeller | Web & Frontend Developer</title>
+  <meta name="description" content="Liz Alvarez Scudeller combines content strategy, UX, WordPress, SEO, analytics, APIs and automation to create clearer digital experiences.">
+  <link rel="canonical" href="https://lizscudeller.com/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Liz Alvarez Scudeller | Content, systems and frontend development"><meta property="og:description" content="Clear digital experiences built where content, technology and business meet."><meta property="og:url" content="https://lizscudeller.com/"><meta property="og:image" content="https://lizscudeller.com/assets/images/social-preview.png"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Liz Alvarez Scudeller","jobTitle":"Web & Frontend Developer","address":{"@type":"PostalAddress","addressLocality":"Burnaby","addressRegion":"British Columbia","addressCountry":"Canada"},"url":"https://lizscudeller.com/","sameAs":["https://www.linkedin.com/in/lizscudeller/","https://github.com/liz-scudeller"]}</script>
 </head>
-
 <body>
-  <!-- HEADER / NAVIGATION -->
-  <header>
-    <a id="logo" href="#home" aria-label="Liz Scudeller portfolio">la<span>:</span>dev</a>
-
-    <button class="mobile-nav-toggle" aria-controls="menu" aria-expanded="false">
-      <span class="sr-only">Menu</span>
-    </button>
-
-    <nav class="navbar" id="menu" data-visible="false" aria-label="Primary navigation">
-      <ul class="menu menu-items">
-        <li id="Home" class="active"><a href="#home">Home</a></li>
-        <li id="Experience"><a href="#experiences">Experience</a></li>
-        <li id="Projects"><a href="#projects">Projects</a></li>
-      </ul>
-
-      <ul class="menu menu-icons" aria-label="Social links">
-        <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/lizscudeller/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-        <li><a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
-        <li><a target="_blank" rel="noreferrer" href="https://codepen.io/liz-scudeller" aria-label="CodePen"><i class="fa-brands fa-codepen"></i></a></li>
-      </ul>
-
-      <button class="contact-btn nav-contact" onclick="sendEmail()">
-        <i class="fa-regular fa-envelope"></i>
-        Get in Touch
-      </button>
-    </nav>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Liz Alvarez Scudeller, home">Liz Alvarez Scudeller</a>
+    <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span class="sr-only">Open menu</span></button>
+    <nav id="primary-nav" class="nav" aria-label="Primary"><a href="#work">Work</a><a href="#builder">Builder</a><a href="#about">About</a><a href="#experience">Experience</a><a href="assets/docs/Liz Alvarez Scudeller Resume_2026.pdf">Résumé</a><a href="#contact">Contact</a></nav>
   </header>
-
-  <main>
-    <!-- HOME SECTION -->
-    <section id="home" class="hero-section section" data-title="Home">
+  <main id="main">
+    <section class="hero" id="top">
       <div class="hero-copy">
-        <p class="eyebrow">Liz Scudeller</p>
-        <h1>Full Stack <span>Developer</span> & Technical Business <span>Analyst</span></h1>
-        <p class="hero-subtitle">
-          I build full-stack applications, analytics platforms, automation systems, and AI-assisted workflows that improve operational efficiency, reporting visibility, and digital performance.
-        </p>
-
-        <div class="hero-actions">
-          <a class="contact-btn" href="#projects">
-            View My Work
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <button class="resume-btn" onclick="window.open('assets/docs/Liz Alvarez Scudeller Resume_2026.pdf', '_blank')">
-            <i class="fa-solid fa-download"></i>
-            Download Resume
-          </button>
-        </div>
+        <p class="eyebrow">LIZ ALVAREZ SCUDELLER / PORTFOLIO 2026</p>
+        <h1>I shape content.<br>I build systems.<br><em>I connect the two.</em></h1>
+        <p class="lede">Developer and digital content specialist turning complex business needs into clear, useful digital experiences.</p>
+        <div class="actions"><a class="button primary" href="#work">Explore my work <span>↓</span></a><a class="button quiet" href="#process">About how I work <span>→</span></a></div>
+        <p class="status"><span></span>Burnaby, BC · Open to the right opportunity</p>
       </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <img src="assets/images/hero/home-hero.png" alt="" />
-      </div>
-
-      <a class="scroll-container" href="#experiences" aria-label="Scroll to experience">
-        <span></span>
-        <small>scroll down</small>
-        <i class="fa-solid fa-arrow-down"></i>
-      </a>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experiences" class="experience-section section" data-title="Experience">
-      <div class="section-heading experience-heading">
-        <div>
-          <h2>Work <span>Experience</span> <i class="fa-solid fa-wand-magic-sparkles"></i></h2>
-        </div>
-        <p>A track record of building solutions that improve operations, drive performance, and support business growth.</p>
-      </div>
-
-      <div class="experience-grid">
-        <article class="experience-card">
-          <div class="role-column">
-            <div class="role-icon"><i class="fa-solid fa-building-columns"></i></div>
-            <div>
-              <div class="experience-meta">
-                <span>Current Role</span>
-              </div>
-              <h3>Full Stack Developer & Technical Business Analyst</h3>
-              <p class="company">Home Service Solutions</p>
-              <div class="role-detail">
-                <span><i class="fa-regular fa-calendar"></i>2020 - Present</span>
-                <span><i class="fa-solid fa-location-dot"></i>Remote</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="experience-content">
-            <p>I design, build and maintain full-stack applications, analytics dashboards, reporting systems, and automation workflows that improve operational efficiency, data visibility, and digital performance. I work closely with stakeholders to translate business needs into scalable, data-driven solutions.</p>
-            <button class="experience-toggle" type="button" aria-expanded="false">View details</button>
-            <div class="experience-extra">
-            <ul class="achievement-list">
-              <li>Develop full-stack applications and internal tools using React, Node.js, Express, SQL, and REST APIs.</li>
-              <li>Built and maintained API integrations with third-party platforms and internal systems.</li>
-              <li>Built dashboards and automated reporting systems integrating CRM, analytics and operational data.</li>
-              <li>Developed AI-assisted workflows using OpenAI APIs to support content, reporting and automation.</li>
-              <li>Integrated Google Analytics 4, Google Search Console and Google Tag Manager to track performance and SEO.</li>
-              <li>Collaborated with leadership and operations teams to align technical solutions with business goals.</li>
-              <li>Created automation workflows that reduce manual tasks and improve operational efficiency.</li>
-              <li>Continuously iterate, troubleshoot and enhance platforms based on data, feedback and user needs.</li>
-            </ul>
-            </div>
-          </div>
-
-          <aside class="tech-stack" aria-label="Tech stack for current role">
-            <h4>Tech Stack</h4>
-            <ul>
-              <li><i class="fa-brands fa-react"></i>React</li>
-              <li><i class="fa-brands fa-node-js"></i>Node.js</li>
-              <li><i class="fa-solid fa-server"></i>Express</li>
-              <li><i class="fa-solid fa-database"></i>SQL</li>
-              <li><i class="fa-brands fa-js"></i>JavaScript / TypeScript</li>
-              <li><i class="fa-solid fa-code-branch"></i>REST APIs</li>
-              <li><i class="fa-solid fa-chart-column"></i>GA4 / GSC / GTM</li>
-              <li><i class="fa-solid fa-brain"></i>OpenAI API</li>
-              <li><i class="fa-brands fa-github"></i>Git & GitHub</li>
-            </ul>
-          </aside>
-        </article>
-
-        <article class="experience-card">
-          <div class="role-column">
-            <div class="role-icon"><i class="fa-solid fa-user-group"></i></div>
-            <div>
-              <div class="experience-meta">
-                <span>2020 - 2021</span>
-              </div>
-              <h3>Web Developer</h3>
-              <p class="company">The Chill Brothers</p>
-              <div class="role-detail">
-                <span><i class="fa-regular fa-calendar"></i>2020 - 2021</span>
-                <span><i class="fa-solid fa-location-dot"></i>Vancouver, Canada</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="experience-content">
-            <p>Developed websites and digital assets while supporting branding, analytics, and SEO initiatives to improve online presence and business visibility.</p>
-            <button class="experience-toggle" type="button" aria-expanded="false">View details</button>
-            <div class="experience-extra">
-            <ul class="achievement-list">
-              <li>Developed websites using HTML, CSS, JavaScript, jQuery, Bootstrap, PHP and WordPress.</li>
-              <li>Designed internal documents and presentations using InDesign and Illustrator.</li>
-              <li>Implemented Google Analytics, Google Business Profile and Google Search Console.</li>
-              <li>Migrated websites to WordPress ensuring performance, responsiveness and SEO best practices.</li>
-              <li>Created brand identity and visual assets using Adobe Illustrator and Photoshop.</li>
-              <li>Collaborated with clients to deliver digital solutions aligned with business goals.</li>
-            </ul>
-            </div>
-          </div>
-
-          <aside class="tech-stack" aria-label="Tech stack for web developer role">
-            <h4>Tech Stack</h4>
-            <ul>
-              <li><i class="fa-brands fa-wordpress"></i>WordPress</li>
-              <li><i class="fa-brands fa-html5"></i>HTML / CSS</li>
-              <li><i class="fa-brands fa-js"></i>JavaScript / jQuery</li>
-              <li><i class="fa-brands fa-php"></i>PHP</li>
-              <li><i class="fa-solid fa-pen-nib"></i>Adobe Illustrator</li>
-              <li><i class="fa-solid fa-file-lines"></i>Adobe InDesign</li>
-              <li><i class="fa-solid fa-chart-simple"></i>Google Analytics</li>
-              <li><i class="fa-solid fa-magnifying-glass-chart"></i>GSC / GBP</li>
-            </ul>
-          </aside>
-        </article>
-      </div>
-
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects-section section" data-title="Projects">
-      <div class="section-heading">
-        <div>
-          <h2>Projects <i class="fa-solid fa-wand-magic-sparkles"></i></h2>
-        </div>
-        <p>A selection of projects that showcase my skills in development, analytics, automation and AI.</p>
-        <a href="https://github.com/liz-scudeller" target="_blank" rel="noreferrer">View all projects <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-icon magic"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div class="project-body">
-            <h3>SEO AI & Analytics Platform</h3>
-            <p class="tech">React • Node.js • OpenAI • GA4</p>
-            <p>AI-powered platform that analyzes Search Console and analytics data to find opportunities, generate AI-assisted recommendations and automate reporting.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-brands fa-react"></i>
-                <i class="fa-brands fa-node-js"></i>
-                <i class="fa-solid fa-brain"></i>
-                <i class="fa-solid fa-chart-simple"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="projects/seo-ai-platform.html" class="project-link" >View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon network"><i class="fa-solid fa-diagram-project"></i></div>
-          <div class="project-body">
-            <h3>CRM Integration & Reporting System</h3>
-            <p class="tech">Node.js • APIs • SQL • Automation</p>
-            <p>System that integrates CRM and operational data through APIs and automated workflows to improve accuracy, auditing and operational reporting.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-brands fa-node-js"></i>
-                <i class="fa-solid fa-server"></i>
-                <i class="fa-solid fa-database"></i>
-                <i class="fa-solid fa-code-branch"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">Private Repository <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon chart"><i class="fa-solid fa-chart-pie"></i></div>
-          <div class="project-body">
-            <h3>Automated Reporting Dashboard</h3>
-            <p class="tech">SQL • Dashboards • KPI Reporting</p>
-            <p>Automated reporting system that centralizes data into KPI dashboards, reducing manual work and providing visibility for better decision-making.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-solid fa-database"></i>
-                <i class="fa-solid fa-chart-column"></i>
-                <i class="fa-solid fa-gear"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller">Private Repository <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon wordpress"><i class="fa-brands fa-wordpress"></i></div>
-          <div class="project-body">
-            <h3>HSS Website & Local SEO System</h3>
-            <p class="tech">WordPress • ACF • SEO • Analytics</p>
-            <p>WordPress website and scalable local SEO system focused on performance, conversion and local search visibility using GA4, GTM and Search Console.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-brands fa-wordpress"></i>
-                <i class="fa-solid fa-file-code"></i>
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <i class="fa-solid fa-chart-simple"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="https://homeservicesolutions.ca/">Live Website <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon react"><i class="fa-brands fa-react"></i></div>
-          <div class="project-body">
-            <h3>Movie Browser</h3>
-            <p class="tech">React • API</p>
-            <p>React application that consumes a movie API and displays searchable movie details including posters, ratings and release information.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-brands fa-react"></i>
-                <i class="fa-solid fa-database"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Movie-Browser">GitHub <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon code"><i class="fa-solid fa-code"></i></div>
-          <div class="project-body">
-            <h3>Portfolio Website</h3>
-            <p class="tech">HTML • CSS • JavaScript</p>
-            <p>Personal portfolio website built with HTML, CSS and JavaScript to showcase projects and experience.</p>
-            <div class="project-footer">
-              <div class="project-icons">
-                <i class="fa-brands fa-html5"></i>
-                <i class="fa-brands fa-css3-alt"></i>
-                <i class="fa-brands fa-js"></i>
-              </div>
-              <a target="_blank" rel="noreferrer" href="https://github.com/liz-scudeller/Portfolio">GitHub <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
+      <div class="connection" aria-label="Content connects through systems to evidence">
+        <div class="connection-line" aria-hidden="true"></div>
+        <span>Content</span><span>Systems</span><span>Evidence</span>
       </div>
     </section>
+
+    <section class="capabilities" aria-label="Core capabilities">
+      <article><span>01</span><h2>Content + UX</h2><p>Clear customer journeys and useful digital experiences.</p></article>
+      <article><span>02</span><h2>SEO + Analytics</h2><p>Content decisions informed by search and performance data.</p></article>
+      <article><span>03</span><h2>APIs + Automation</h2><p>Connected systems and less repetitive manual work.</p></article>
+      <article><span>04</span><h2>End-to-end delivery</h2><p>From requirements and structure through implementation and improvement.</p></article>
+    </section>
+
+    <div class="ticker" aria-label="Skills: Content Strategy, User Experience, WordPress, CMS, Information Architecture, SEO, AEO, Accessibility, React, Node.js, APIs, GA4, GTM, Reporting and Automation"><div class="ticker-track" aria-hidden="true"><span>CONTENT STRATEGY · USER EXPERIENCE · WORDPRESS · CMS · INFORMATION ARCHITECTURE · SEO · AEO · ACCESSIBILITY · REACT · NODE.JS · APIs · GA4 · GTM · REPORTING · AUTOMATION ·</span><span>CONTENT STRATEGY · USER EXPERIENCE · WORDPRESS · CMS · INFORMATION ARCHITECTURE · SEO · AEO · ACCESSIBILITY · REACT · NODE.JS · APIs · GA4 · GTM · REPORTING · AUTOMATION ·</span></div></div>
+
+    <section id="work" class="section work">
+      <div class="section-intro"><div><p class="eyebrow">SELECTED WORK</p><h2>Projects with a purpose.</h2></div><p>A selection of content, web and systems work created to make information clearer, workflows easier and decisions better supported.</p></div>
+      <div class="filters" role="group" aria-label="Filter projects"><button class="active" data-filter="all" aria-pressed="true">All</button><button data-filter="content-seo" aria-pressed="false">Content & SEO</button><button data-filter="ai-tools" aria-pressed="false">AI & Tools</button><button data-filter="systems" aria-pressed="false">Systems</button></div>
+      <div class="work-layout"><div id="project-list" class="project-list"></div><aside id="project-preview" class="project-preview" aria-live="polite"></aside></div>
+    </section>
+
+    <section id="builder" class="builder">
+      <div class="section-intro"><div><p class="eyebrow">BUILDER</p><h2>Built, not just planned.</h2></div><p>When an existing tool does not solve the problem, I build the missing connection—platforms, integrations, reporting workflows and automations that turn scattered information into something people can use.</p></div>
+      <div class="builder-stories">
+        <article><span>01</span><h3>Custom platforms and AI-assisted workflows</h3><p class="story-problem">When useful evidence is spread across tools, decisions take longer.</p><p>I build focused platforms that organize the signals, support research and keep human review in the workflow.</p><a href="projects/seo-ai-platform.html">Explore the SEO AI platform →</a></article>
+        <article><span>02</span><h3>Integrations and business automation</h3><p class="story-problem">When systems do not talk to each other, people become the connection.</p><p>I translate operational rules into integrations that automate repeatable work and keep exceptions visible.</p><a href="projects/crm-integration.html">Explore the CRM system →</a></article>
+        <article><span>03</span><h3>Reporting and operational visibility</h3><p class="story-problem">When reporting is rebuilt by hand, there is less time to understand it.</p><p>I create repeatable views that make definitions consistent and decisions easier to support.</p><a href="projects/reporting-dashboard.html">Explore the reporting dashboard →</a></article>
+      </div>
+    </section>
+
+    <section id="process" class="section process">
+      <div class="process-heading"><p class="eyebrow">HOW I WORK</p><h2>How I turn complexity into clarity.</h2></div>
+      <ol><li><span>01</span><h3>Understand</h3><p>Learn the customer need, business objective and actual workflow.</p></li><li><span>02</span><h3>Structure</h3><p>Organize the information, content and system requirements.</p></li><li><span>03</span><h3>Build</h3><p>Create the experience, integration or tool.</p></li><li><span>04</span><h3>Improve</h3><p>Measure performance, collect feedback and refine the solution.</p></li></ol>
+    </section>
+
+    <section id="about" class="section about">
+      <div><p class="eyebrow">ABOUT</p><h2>I work where content, technology and business meet.</h2></div>
+      <div class="about-copy"><p>I work across websites, content systems, SEO, analytics, integrations and automation. The common thread is making complicated or disconnected workflows easier to understand.</p><p>I can work with stakeholders to define the real need, then move into content structure, user experience and technical implementation. I combine customer-focused thinking with practical delivery.</p><p>I’m based in Burnaby, British Columbia, and interested in digital content, web experience, technical business analysis and development opportunities.</p><div class="skills"><span>WordPress + ACF</span><span>Content + SEO</span><span>Frontend development</span><span>Analytics + measurement</span><span>APIs + automation</span><span>Reporting systems</span></div></div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="section-intro"><div><p class="eyebrow">EXPERIENCE</p><h2>Practical work, from structure to delivery.</h2></div><a class="text-link" href="assets/docs/Liz Alvarez Scudeller Resume_2026.pdf">Download résumé ↗</a></div>
+      <article class="role"><div class="role-date">2020—Present</div><div><p class="role-tag">CURRENT ROLE</p><h3>Web & Frontend Developer</h3><p class="company">Home Service Solutions · Canada</p></div><div><p>I develop and maintain WordPress experiences, reusable ACF content structures, service and location pages, and search-focused improvements. I also build internal reporting tools, API integrations and business automation by translating operational requirements with stakeholders and subject-matter experts.</p></div></article>
+      <article class="role"><div class="role-date">2018—2019</div><div><p class="role-tag">EDUCATION</p><h3>Graphic Design</h3><p class="company">Institute of Technology Development of Canada · Vancouver, BC</p></div></article>
+      <article class="role"><div class="role-date">2014—2017</div><div><p class="role-tag">EDUCATION</p><h3>Computer Engineering</h3><p class="company">Santa Cecilia University · Brazil</p></div></article>
+      <article class="role"><div class="role-date">2024</div><div><p class="role-tag">CONTINUING EDUCATION</p><h3>Fullstack Web Developer</h3><p class="company">Udemy · 55 hours</p></div></article>
+    </section>
+    <section id="contact" class="contact"><p class="eyebrow">CONTACT</p><h2>Have a complex digital problem?<br><em>Let’s make it clearer.</em></h2><a class="email-link" href="mailto:lizalvarezscudeller@gmail.com">lizalvarezscudeller@gmail.com <span>↗</span></a><div class="contact-links"><a href="https://www.linkedin.com/in/lizscudeller/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/liz-scudeller" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="assets/docs/Liz Alvarez Scudeller Resume_2026.pdf">Résumé ↓</a></div></section>
   </main>
-
-  <!-- MOBILE EXPERIENCE DETAILS -->
-  <div class="experience-modal" aria-hidden="true">
-    <div class="experience-modal-backdrop"></div>
-    <div class="experience-modal-panel" role="dialog" aria-modal="true" aria-labelledby="experience-modal-title">
-      <button class="experience-modal-close" type="button" aria-label="Close details">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div class="experience-modal-content"></div>
-    </div>
-  </div>
-
-  <!-- FOOTER / OPEN TO OPPORTUNITIES CTA -->
-  <footer class="site-footer">
-    <div class="opportunity-card">
-      <div>
-        <span class="star"><i class="fa-regular fa-star"></i></span>
-        <p>I'm always open to new opportunities and exciting projects.<strong>Let's build something amazing together!</strong></p>
-      </div>
-      <button class="contact-btn" onclick="sendEmail()">
-        <i class="fa-regular fa-envelope"></i>
-        Get in Touch
-      </button>
-    </div>
-  </footer>
-
+  <footer><span>© 2026 Liz Alvarez Scudeller</span><span>Burnaby, British Columbia</span><a href="#top">Back to top ↑</a></footer>
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
