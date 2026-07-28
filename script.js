@@ -1,57 +1,15 @@
-$(document).ready(function() {
-
-  const menuNav = document.querySelector(".navbar");
-  const navToggle = document.querySelector('.mobile-nav-toggle');
-
-  navToggle.addEventListener('click', () => {
-    const visibility = menuNav.getAttribute('data-visible');
-
-    if (visibility === "false"){
-      menuNav.setAttribute('data-visible', true);
-      navToggle.setAttribute('aria-expanded',true);
-
-    } else if (visibility === "true"){
-      menuNav.setAttribute('data-visible', false);
-      navToggle.setAttribute('aria-expanded',false);
-
-    }
-  })
-
-//Active Section and Menu
-
-$.fn.isInViewport = function() {
-
-	var elementTop = $(this).offset().top;
-
-	var elementBottom = elementTop + $(this).outerHeight() / 2;
-
-	var viewportTop = $(window).scrollTop();
-
-	var viewportHalf = viewportTop + $(window).height() / 2;
-
-	return elementBottom > viewportTop && elementTop < viewportHalf;
-
-};
-
-$(window).on('load resize scroll', function() {
-
-	$('.section').each(function() {
-
-    var sectionTitle = $(this).data("title");
-    var sectionIndex = $(this).index() -1;
-    var menuItemTitle = $('.menu-items li').get(sectionIndex);
-
-		if ($(this).isInViewport()) {
-      $(menuItemTitle).addClass('active')
-		} else {
-      $(menuItemTitle).removeClass('active')
-		}
-
-	});
-
-});
-//End Active Section and Menu
-
-});
-
-//jquery end
+/** @typedef {{id:string,title:string,status?:string,category:string,filter:string,summary:string,tech:string,value:string,url:string,visual:string}} Project */
+/** @type {readonly Project[]} */
+const projects=Object.freeze([
+  {id:"01",title:"HSS Website, Service Content & Local SEO System",category:"Content, CMS & SEO",filter:"content-cms",summary:"A WordPress content system that organizes service and location information around customer needs, reusable structures and search visibility.",tech:"WordPress · ACF · PHP · GA4 · GTM · Google Search Console",value:"Creates clear, consistent and scalable service content across customer journeys.",url:"projects/hss-seo-system.html",visual:"hss"},
+  {id:"02",title:"Gutter Cleaning Cost Calculator",status:"Interactive prototype",category:"Digital Service & UX",filter:"digital-services",summary:"A WordPress-based calculator that translates property details and recurring service-pricing rules into a clearer customer-facing estimate.",tech:"WordPress · PHP · JavaScript · HTML · CSS",value:"Turns recurring cleaning-cost rules into an understandable customer-facing estimate.",url:"projects/interactive-pricing-calculator.html",visual:"calculator"},
+  {id:"03",title:"SEO AI & Analytics Platform",status:"In development",category:"AI & Tools",filter:"ai-tools",summary:"An AI-powered platform that brings search and analytics data together to identify SEO opportunities and support content decisions.",tech:"React · Node.js · OpenAI · Google Search Console · GA4",value:"Turns scattered search data into prioritized content opportunities.",url:"projects/seo-ai-platform.html",visual:"seo"},
+  {id:"04",title:"CRM Integration & Reporting System",category:"Systems",filter:"systems",summary:"An integration that connects CRM and operational data through APIs and automated workflows.",tech:"Node.js · APIs · SQL · Automation",value:"Makes operational information more accurate and reliable.",url:"projects/crm-integration.html",visual:"crm"}
+]);
+const list=document.querySelector("#project-list"),preview=document.querySelector("#project-preview");
+function previewMarkup(p){const art=p.visual==="calculator"?`<div class="preview-art calculator" aria-hidden="true"><span>Gutter Cleaning Cost Calculator</span><strong>${p.id}</strong><div class="preview-calculator-fields"><i>Linear Feet <b>120</b></i><i>Stories <b>1</b></i><i>Frequency <b>3</b></i><button tabindex="-1">Calculate</button></div><div class="preview-calculator-results"><i>Annual estimate <b>$540.00</b></i><i>20-year projected cost <b>$10,800.00</b></i></div></div>`:`<div class="preview-art ${p.visual}" aria-hidden="true"><span>${p.category}</span><strong>${p.id}</strong><i></i><i></i><i></i></div>`;return `${art}<div class="preview-copy"><p>${p.summary}</p><dl><dt>Built with</dt><dd>${p.tech}</dd></dl><a href="${p.url}">View project <span>→</span></a></div>`}
+function setPreview(p){preview.innerHTML=previewMarkup(p)}
+function renderProjects(filter="all"){const visible=projects.filter(p=>filter==="all"||p.filter===filter);list.innerHTML=visible.map((p,i)=>`<article class="project-row ${i===0?"active":""}" data-project="${p.id}" tabindex="0"><div><span class="project-index">${p.id}</span><div>${p.status?`<small>${p.status}</small>`:""}<h3>${p.title}</h3><p>${p.value}</p><div class="mobile-detail">${previewMarkup(p)}</div></div></div><span class="category">${p.category}</span><a href="${p.url}" aria-label="View project: ${p.title}">View project <span>→</span></a></article>`).join("");if(visible[0])setPreview(visible[0]);list.querySelectorAll(".project-row").forEach(row=>{const activate=()=>{list.querySelectorAll(".project-row").forEach(r=>r.classList.remove("active"));row.classList.add("active");setPreview(projects.find(p=>p.id===row.dataset.project))};row.addEventListener("mouseenter",activate);row.addEventListener("focusin",activate)})}
+renderProjects();
+document.querySelectorAll(".filters button").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".filters button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-pressed","false")});button.classList.add("active");button.setAttribute("aria-pressed","true");renderProjects(button.dataset.filter)}));
+const navToggle=document.querySelector(".nav-toggle"),nav=document.querySelector(".nav");navToggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");navToggle.setAttribute("aria-expanded",String(open))});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");navToggle.setAttribute("aria-expanded","false")}));
