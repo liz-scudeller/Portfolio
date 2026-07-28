@@ -1,0 +1,135 @@
+//pricing page calculator
+
+// === HSS - Gutter Cleaning Savings Calculator [gutter_calculator] ===
+if (!function_exists('hss_gutter_calculator_shortcode')) {
+  function hss_gutter_calculator_shortcode($atts = []) {
+    // Valores padrão (podem ser sobrescritos por atributos do shortcode)
+    $a = shortcode_atts([
+      'base_rate'        => '1.50',  // $ por pé linear por limpeza
+      'mult_1_story'     => '1.0',   // multiplicador 1 andar
+      'mult_2_story'     => '1.3',   // multiplicador 2 andares
+      'mult_3_story'     => '1.6',   // multiplicador 3+ andares
+      'default_feet'     => '120',
+      'default_frequency'=> '3'
+    ], $atts, 'gutter_calculator');
+
+    ob_start(); ?>
+    <div class="hss-gc" 
+         data-base-rate="<?php echo esc_attr($a['base_rate']); ?>"
+         data-m1="<?php echo esc_attr($a['mult_1_story']); ?>"
+         data-m2="<?php echo esc_attr($a['mult_2_story']); ?>"
+         data-m3="<?php echo esc_attr($a['mult_3_story']); ?>">
+      <h2 class="hss-gc__title">Gutter Cleaning Savings Calculator</h2>
+
+      <div class="hss-gc__grid">
+        <label class="hss-gc__field">
+          <span>Linear Feet of Gutters</span>
+          <input type="number" id="hss-gc-feet" min="0" step="1" value="<?php echo esc_attr($a['default_feet']); ?>" placeholder="e.g. 120">
+        </label>
+
+        <label class="hss-gc__field">
+          <span>Number of Stories</span>
+          <select id="hss-gc-stories">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+        </label>
+
+        <label class="hss-gc__field">
+          <span>Annual Cleaning Frequency</span>
+          <input type="number" id="hss-gc-frequency" min="0" step="1" value="<?php echo esc_attr($a['default_frequency']); ?>" placeholder="e.g. 3">
+        </label>
+
+        <button class="hss-gc__btn" id="hss-gc-calc">Calculate</button>
+      </div>
+
+      <div class="hss-gc__results">
+        <div class="hss-gc__card">
+          <h3>Estimated Annual Cleaning Cost</h3>
+          <div class="hss-gc__money">$<span id="hss-gc-annual">0.00</span></div>
+          <ul class="hss-gc__bullets">
+            <li>Reduce maintenance</li>
+            <li>Extended gutter lifespan</li>
+            <li>Save time and hassle</li>
+          </ul>
+        </div>
+
+        <div class="hss-gc__card">
+          <h3>20-Year Potential Savings</h3>
+          <div class="hss-gc__money">$<span id="hss-gc-s20">0.00</span></div>
+          <ul class="hss-gc__bullets">
+            <li>No more mess</li>
+            <li>Prevent water damage</li>
+            <li>Long-term cost savings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hss-gc__cta">
+        <a class="hss-gc__btn hss-gc__btn--primary" href="/contact/">Start Saving</a>
+        <a class="hss-gc__btn" href="/alu-rex-gutter-guards/">Explore Alu-Rex</a>
+      </div>
+    </div>
+
+    <style>
+      .hss-gc { border:1px solid #e5e7eb; border-radius:16px; padding:24px; background:#fff; }
+      .hss-gc__title { margin:0 0 12px; font-size:1.5rem; line-height:1.2; }
+      .hss-gc__grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; align-items:end; }
+      .hss-gc__field { display:flex; flex-direction:column; gap:6px; }
+      .hss-gc__field input, .hss-gc__field select { padding:10px 12px; border:1px solid #d1d5db; border-radius:10px; }
+      .hss-gc__btn { padding:12px 16px; border-radius:12px; border:1px solid #2a2b2e; background:#2a2b2e; color:#fff; cursor:pointer; }
+      .hss-gc__btn:hover { opacity:.9; }
+      .hss-gc__btn--primary { background:#759b2c; border-color:#759b2c; }
+	.hss-gc__btn--primary:hover { background:#2a2b2e; border-color:#2a2b2e; color:#759b2c }
+      .hss-gc__results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
+      .hss-gc__card { border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fafafa; }
+      .hss-gc__money { font-size:2rem; font-weight:700; margin:8px 0 10px; }
+      .hss-gc__bullets { margin:0; padding-left:18px; color:#374151; }
+      .hss-gc__cta { display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; }
+      @media (max-width: 900px){
+        .hss-gc__grid { grid-template-columns:1fr; }
+        .hss-gc__results { grid-template-columns:1fr; }
+      }
+    </style>
+
+    <script>
+      (function(){
+        function $(id){ return document.getElementById(id); }
+        function toMoney(x){ return (Math.round(x * 100) / 100).toFixed(2); }
+
+        function calc(){
+          const wrap = document.querySelector('.hss-gc');
+          if(!wrap) return;
+
+          const feet = parseFloat($('hss-gc-feet').value || '0');
+          const stories = parseInt($('hss-gc-stories').value || '1', 10);
+          const freq = parseFloat($('hss-gc-frequency').value || '0');
+
+          const baseRate = parseFloat(wrap.dataset.baseRate || '1.5');
+          const m1 = parseFloat(wrap.dataset.m1 || '1.0');
+          const m2 = parseFloat(wrap.dataset.m2 || '1.3');
+          const m3 = parseFloat(wrap.dataset.m3 || '1.6');
+
+          const mult = stories === 1 ? m1 : (stories === 2 ? m2 : m3);
+
+          const annual = feet * baseRate * mult * freq;
+          const savings20 = annual * 20;
+
+          $('hss-gc-annual').textContent = toMoney(annual);
+          $('hss-gc-s20').textContent = toMoney(savings20);
+        }
+
+        document.addEventListener('click', function(e){
+          if(e.target && e.target.id === 'hss-gc-calc'){ e.preventDefault(); calc(); }
+        });
+
+        // Calcular ao carregar para mostrar valores iniciais
+        document.addEventListener('DOMContentLoaded', calc);
+      })();
+    </script>
+    <?php
+    return ob_get_clean();
+  }
+  add_shortcode('gutter_calculator', 'hss_gutter_calculator_shortcode');
+}

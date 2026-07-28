@@ -1,0 +1,8 @@
+import{cp,mkdir,rm,readFile,access}from"node:fs/promises";import{join,dirname}from"node:path";
+const root=process.cwd(),dist=join(root,"dist");
+const pages=["index.html","404.html","projects/hss-seo-system.html","projects/interactive-pricing-calculator.html","projects/seo-ai-platform.html","projects/crm-integration.html","projects/reporting-dashboard.html"];
+const files=[...pages,"script.js","case-studies.js","robots.txt","sitemap.xml","assets/css/style.css","assets/css/project-details.css","assets/docs/Liz Alvarez Scudeller Resume_2026.pdf","assets/images/social-preview.png","assets/images/detail_pages/seo-copilot-dashboard.webp","assets/images/detail_pages/crm-integration-hero.png"];
+for(const file of files)await access(join(root,file));
+for(const page of [...pages,"script.js","case-studies.js"]){const text=await readFile(join(root,page),"utf8");if(/�|â€|Â·/.test(text))throw Error(`Encoding marker in ${page}`);if(page.endsWith(".html"))for(const m of text.matchAll(/(?:href|src)="([^"#]+)"/g)){const link=m[1];if(/^(https?:|mailto:|\/)/.test(link))continue;const target=join(dirname(join(root,page)),link);await access(target).catch(()=>{throw Error(`Broken local link in ${page}: ${link}`)})}}
+if(process.argv.includes("--check")){console.log("All routes, local links, encoding and required files verified.");process.exit(0)}
+await rm(dist,{recursive:true,force:true});for(const dir of["assets/css","assets/docs","assets/images/detail_pages","projects"])await mkdir(join(dist,dir),{recursive:true});for(const file of files)await cp(join(root,file),join(dist,file),{recursive:true});console.log("Static production build created in dist/");
